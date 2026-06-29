@@ -119,7 +119,7 @@ else if(mfrc_state == 1 && HAL_GetTick() - last_detected_tick > 2000)
 
 **FreeRTOS interrupt priority configuration:** All ISRs calling FreeRTOS `FromISR` APIs (TIM2, TIM4, USART2) must be set to a numerically higher priority than `configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY` (5). Default priority of 0 causes FreeRTOS to mask these interrupts during critical sections. Fixed by explicitly calling `HAL_NVIC_SetPriority` after peripheral init.
 
-**Recursive mutex for UART:** `uart_task` holds `uart_mutex` while dispatching commands. The `read` command calls `print_mpu_data` which also acquires `uart_mutex` — a deadlock without a recursive mutex. Solved by creating `uart_mutex` with `osMutexRecursive` flag.
+**Recursive mutex for UART:** `uart_task` holds `uart_mutex` while dispatching commands. The `read` command calls `print_mpu_data` which also acquires `uart_mutex`--a deadlock without a recursive mutex. Solved by creating `uart_mutex` with `osMutexRecursive` flag.
 
 **Float formatting under FreeRTOS:** `snprintf` with `%.2f` hangs under FreeRTOS with newlib-nano due to stack consumption from the float math library. Replaced with fixed-point integer arithmetic using divide and modulo.
 
