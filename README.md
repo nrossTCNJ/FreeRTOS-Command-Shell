@@ -7,6 +7,12 @@ This is the fifth and final project in a series of embedded systems projects, wi
 
 ---
 
+## Video Demonstration
+[![Demo Video](https://img.youtube.com/vi/DIygMjmnh6I/0.jpg)](https://www.youtube.com/watch?v=DIygMjmnh6I)
+**Demo Covers:** Every command typed into the UART shell with visible feedback in the shell and the STM32F411RE. This includes on-board LED status toggling, IMU reading and streaming, blue PWM LED dimming/pulse animation, and RFID UID-based authentication.
+
+---
+
 ## Hardware
 
 - **MCU:** STM32F411RE (NUCLEO-F411RE)
