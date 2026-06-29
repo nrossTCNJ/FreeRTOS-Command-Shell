@@ -1,4 +1,4 @@
-# FreeRTOS Command Shell — STM32F411RE
+# FreeRTOS Command Shell - STM32F411RE
 
 
 A bare-metal embedded systems project built on the STM32F411RE NUCLEO board that integrates multiple hardware peripherals under a FreeRTOS preemptive scheduler. This system utilizes a UART command shell, streams IMU sensor data, controls PWM-driven LED brightness, and performs RFID access control. All of this runs concurrently as independent RTOS tasks.
