@@ -96,7 +96,7 @@ The shell uses an interrupt-driven ring buffer for non-blocking receive. `HAL_UA
 
 ## RFID Access Control
 
-Cards are identified by their 4-byte UID read via the ISO 14443 anticollision sequence. A known UID is stored at startup and compared using `memcmp`. A matching card turns on the green LED; any other card turns on the red LED.
+Cards are identified by their 4-byte UID read via the ISO 14443 anticollision sequence. A known UID is stored at startup and compared using `memcmp`. A matching card turns on the green LED, any other card turns on the red LED.
 
 The detection state machine prevents duplicate scans with debouncing:
 
@@ -123,7 +123,7 @@ else if(mfrc_state == 1 && HAL_GetTick() - last_detected_tick > 2000)
 
 **Float formatting under FreeRTOS:** `snprintf` with `%.2f` hangs under FreeRTOS with newlib-nano due to stack consumption from the float math library. Replaced with fixed-point integer arithmetic using divide and modulo.
 
-**Task stack sizing:** Each FreeRTOS task has a private fixed stack. Deep HAL call chains (uart → process_command → print_mpu_data → HAL_UART_Transmit) consumed more stack than default allocations. Stack overflow detection enabled via `configCHECK_FOR_STACK_OVERFLOW = 2` with `vApplicationStackOverflowHook`.
+**Task stack sizing:** Each FreeRTOS task has a private fixed stack. Deep HAL call chains (uart -> process_command -> print_mpu_data -> HAL_UART_Transmit) consumed more stack than default allocations. Stack overflow detection enabled via `configCHECK_FOR_STACK_OVERFLOW = 2` with `vApplicationStackOverflowHook`.
 
 **Card UID read debouncing:** Software initally read multiple card scans every time a card was held to the MFRC522. Debouncing was introduced with `HAL_GetTick()` such that a scan is only read when enough time has passed from the last read.
 
