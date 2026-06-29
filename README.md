@@ -12,7 +12,7 @@ This is the fifth and final project in a series of embedded systems projects, wi
 - **MCU:** STM32F411RE (NUCLEO-F411RE)
 - **IMU:** MPU-6500/9250 (I2C1, PB8/PB9)
 - **RFID Reader:** MFRC522 clone (SPI1, PB3/PB4/PB5)
-- **PWM LED:** Connected to TIM3 CH1 (PA6)
+- **PWM LED:** Blue LED connected to TIM3 CH1 (PA6)
 - **Auth LEDs:** PC2 (red), PC3 (green)
 - **IDE:** STM32CubeIDE
 - **RTOS:** FreeRTOS via CMSIS_V2
