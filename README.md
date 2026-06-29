@@ -141,6 +141,7 @@ src/src/
 ├── i2c.c               # Bare-metal I2C1 init, read/write/burst
 ├── tim_init.c          # TIM2/TIM3/TIM4 init, ISR handlers, pulse_task
 └── process_command.c   # Command dispatch and handlers
+src/inc/                # All header files for corresponding src files
 ```
 
 ---
