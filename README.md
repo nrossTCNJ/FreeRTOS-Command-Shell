@@ -32,7 +32,7 @@ The system runs four concurrent FreeRTOS tasks, each responsible for a distinct 
 
 ### Shared Resource Protection
 
-One mutex protect shared hardware:
+One mutex protects shared hardware:
 
 - **`uart_mutex` (recursive):** Guards all `HAL_UART_Transmit` calls across tasks. Recursive because `uart_task` holds the mutex when dispatching commands that themselves transmit (e.g. `read` → `print_mpu_data`).
 
