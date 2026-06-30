@@ -12,6 +12,8 @@ This is the fifth and final project in a series of embedded systems projects, wi
 
 **Demo Covers:** Every command typed into the UART shell with visible feedback in the shell and the STM32F411RE. This includes on-board LED status toggling, IMU reading and streaming, blue PWM LED dimming/pulse animation, and RFID UID-based authentication.
 
+A full lab-style writeup of the development process, including every project leading up to this one, is available [here](report/FreeRTOS-Command-Shell-Report.pdf).
+
 ---
 
 ## Hardware
@@ -134,7 +136,7 @@ else if(mfrc_state == 1 && HAL_GetTick() - last_detected_tick > 2000)
 
 **Card UID read debouncing:** Software initally read multiple card scans every time a card was held to the MFRC522. Debouncing was introduced with `HAL_GetTick()` such that a scan is only read when enough time has passed from the last read.
 
-A full lab-style writeup of the development process, including every project leading up to this one, is available [here](FreeRTOS-Command-Shell.pdf).
+A full lab-style writeup of the development process, including every project leading up to this one, is available [here](report/FreeRTOS-Command-Shell-Report.pdf).
 
 ---
 
