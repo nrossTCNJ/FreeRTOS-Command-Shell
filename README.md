@@ -157,7 +157,7 @@ src/inc/                # All header files for corresponding src files
 
 ---
 
-## Prior Projects in This Series
+## Previous Projects
 
 | Project | Focus |
 |---------|-------|
